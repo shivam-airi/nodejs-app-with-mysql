@@ -13,9 +13,11 @@
 ## Project 3
 * tast 1 : Create jenkins CI job to automate the build of image for frontend and backend and push it on docker hub whenever there is any change in the code the pipeline will triggered autom atically.
 * task 2 : Create jenkins CD jobs to host the application on local environment.
-* task 3 : Link the jobs. whenever the ci triggers the cd trrigers automatically.
+* task 3 : Link the jobs. If the build job successfully run the cd will trrigers automatically. 
 
 ## Project 4
 * task 1 : Create manifest files to host the application on minikube(k8s). Create seprate deployment and services for frontend, backend and mysql servers.
+* task 2 : Host the application on minikube.
+* task 3 : Push the yamls on the git hub repository.
 * task 2 : Create jenkins CD jobs to host the application on a minikube environment.
 * task 3 : Create a dev environment for the application.
