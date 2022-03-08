@@ -12,7 +12,7 @@ This is a API and microservices based Demo node application which contains separ
 * task 1 : Create dockerfile for frontend and backend and containerize the frontend and backend.
 * task 2 : Run the containers on localhost. make sure that after running frontend backend and database of the application is running fine and the database is connected.
 * task 3 : Push the Dockerfile on your github repository.
-* task 4 : Add volume with the containers.
+* task 4 : Attach volume with the containers.
 
 ## Project 3
 * tast 1 : Create jenkins CI job to automate the build of image for frontend and backend and push it on docker hub whenever there is any change in the code the pipeline will triggered automatically.
