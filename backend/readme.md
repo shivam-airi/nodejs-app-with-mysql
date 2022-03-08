@@ -10,4 +10,4 @@
    emp_add varchar(255) DEFAULT false
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-## Change the connection url in the code with the mysql servers url
+## Change the connection url in the code with the mysql servers url (check conn.js)
