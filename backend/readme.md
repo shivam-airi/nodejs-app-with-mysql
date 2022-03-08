@@ -1,6 +1,6 @@
 # Readme
 
-## Please run the following command to create the table on mysql server before run the app.js
+## Please run the following command to create the database and table on mysql server before run the app.js
 * CREATE DATABASE employees_db
 * USE employees_db
 * CREATE TABLE IF NOT EXISTS `EMPLOYEES` (
