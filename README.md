@@ -1,6 +1,7 @@
 ## Time : 3+1 days (From Project 1-4)
 
 # node-application
+This is a API and microservices based Demo node application which contains separate Frontend Backend and the database used is mysql. 
 
 ## Project 1 
 * task 1 : Go through the code of the application. understand about the ports to expose to connect the frontend backend and the database mysql.
