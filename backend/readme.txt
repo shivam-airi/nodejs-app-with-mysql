@@ -1,3 +1,4 @@
+# Readme
 Please run the following command to create the table before run the app.js
 
 1. create database employees_db
