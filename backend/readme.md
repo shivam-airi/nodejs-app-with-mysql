@@ -1,9 +1,9 @@
 # Readme
 
 ## Please run the following command to create the table on mysql server before run the app.js
-* 1. CREATE DATABASE employees_db
-* 2. USE employees_db
-* 3. CREATE TABLE IF NOT EXISTS `EMPLOYEES` (
+* CREATE DATABASE employees_db
+* USE employees_db
+* CREATE TABLE IF NOT EXISTS `EMPLOYEES` (
    emp_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
    emp_name varchar(255) NOT NULL,
    emp_contact varchar(10),
