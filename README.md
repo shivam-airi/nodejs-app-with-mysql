@@ -8,18 +8,18 @@
 ## Project 2
 * task 1 : Create dockerfile for frontend and backend and containerize the frontend and backend.
 * task 2 : Run the containers on localhost. make sure that after running frontend backend and database of the application is running fine and the database is connected.
-* task 3 : Push the Dockerfile on github repository.
+* task 3 : Push the Dockerfile on your github repository.
 
 ## Project 3
-* tast 1 : Create jenkins CI job to automate the build of image for frontend and backend and push it on docker hub whenever there is any change in the code the pipeline will triggered autom atically.
+* tast 1 : Create jenkins CI job to automate the build of image for frontend and backend and push it on docker hub whenever there is any change in the code the pipeline will triggered automatically.
 * task 2 : Create jenkins CD jobs to host the application on local environment.
 * task 3 : Link the jobs. If the build job successfully run the cd will trrigers automatically. 
 
 ## Project 4
 * task 1 : Create manifest files to host the application on minikube(k8s). Create seprate deployment and services for frontend, backend and mysql servers.
 * task 2 : Host the application on minikube locally.
-* task 3 : Push the yamls on the git hub repository.
+* task 3 : Push the yamls on your github repository.
 
 ## Project 5
 * task 1 : Create jenkins CD jobs to host the application on a minikube environment.
-* task 3 : Create a dev environment for the application.
+* task 2 : Create a dev environment for the application.
