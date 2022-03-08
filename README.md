@@ -17,7 +17,9 @@
 
 ## Project 4
 * task 1 : Create manifest files to host the application on minikube(k8s). Create seprate deployment and services for frontend, backend and mysql servers.
-* task 2 : Host the application on minikube.
+* task 2 : Host the application on minikube locally.
 * task 3 : Push the yamls on the git hub repository.
-* task 2 : Create jenkins CD jobs to host the application on a minikube environment.
+
+## Project 5
+* task 1 : Create jenkins CD jobs to host the application on a minikube environment.
 * task 3 : Create a dev environment for the application.
