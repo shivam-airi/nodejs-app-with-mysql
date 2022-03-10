@@ -1,8 +1,15 @@
 FROM node
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY package.json /usr/src/app
+
+WORKDIR /frontend
+
+COPY package*.json ./
+
 RUN npm install
-COPY . /usr/src/app
+
+COPY . .
+
 EXPOSE 5000
-CMD ["npm", "start"]
+
+#VOLUME [ "/app/node_modules" ]
+
+CMD [ "npm", "start" ]

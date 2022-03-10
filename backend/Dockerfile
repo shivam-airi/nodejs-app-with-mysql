@@ -1,9 +1,13 @@
 FROM node
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY package.json /usr/src/app
+
+WORKDIR /backend
+
+COPY package*.json ./
+
 RUN npm install
-COPY . /usr/src/app
+
+COPY . .
+
 EXPOSE 8000
-EXPOSE 3306
+
 CMD ["npm", "start"]

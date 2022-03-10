@@ -1,0 +1,50 @@
+version: "3"
+services:
+  db:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: password@12345
+      MYSQL_DATABASE: employees_db
+    restart: always
+    networks:
+      - node-app-network
+    volumes:
+      - node-db-volume:/db/node_modules
+  web:
+    build: ./backend
+    environment:
+      MYSQL_DATABASE: employees_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password@12345
+      MYSQL_HOST: db
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    restart: on-failure
+    networks:
+      - node-app-network
+    volumes:
+      - node-be-volume:/backend/node_modules
+  fn:
+    build: ./FrontEnd
+    ports:
+      - "5000:5000"
+    depends_on:
+      - web
+    restart: on-failure
+    networks:
+      - node-app-network
+    volumes:
+      - node-fn-volume:/frontend/node_modules
+
+# custom network
+networks:
+  node-app-network:
+    driver: bridge
+
+# custom volume
+volumes:
+  node-fn-volume:
+  node-be-volume:
+  node-db-volume:
