@@ -5,10 +5,10 @@ pipeline{
 	}
 
 	stages {
-		stage('testing-101') {
+		stage('Build image for frontend') {
 			steps {
-				sh 'pwd'
-				sh 'ls -l'
+				sh 'cd frontend/'
+				sh 'docker build -t frontend:${env.BUILD_ID} .'
 			}
 		}
 
