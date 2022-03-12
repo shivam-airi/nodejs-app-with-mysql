@@ -12,7 +12,7 @@ pipeline{
 		stage('Build image for frontend') {
 			steps {
 				sh 'cd frontend/'
-				sh 'docker build -t frontend:${env.BUILD_ID} .'
+				sh "docker build -t frontend:${env.BUILD_ID} ."
 			}
 		}
 	}
