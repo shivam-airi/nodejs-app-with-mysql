@@ -5,19 +5,25 @@ pipeline{
 	}
 
 	stages {
-		// stage('Build image for frontend') {
-		// 	steps {
-		// 		sh "docker build -t frontend:v${env.BUILD_ID} frontend/."
-		// 	}
-		// }
+		stage('Build image for frontend') {
+			steps {
+				sh "docker build -t frontend:v${env.BUILD_ID} frontend/."
+			}
+		}
 
-		// stage('Build image for backend') {
-		// 	steps {
-		// 		sh "docker build -t backend:v${env.BUILD_ID} backend/."
-		// 	}
-		// }
+		stage('Build image for backend') {
+			steps {
+				sh "docker build -t backend:v${env.BUILD_ID} backend/."
+			}
+		}
 		
-		stage('Login') {
+		stage('Build image for mysql') {
+			steps {
+				sh "docker build -t mysqldb:v${env.BUILD_ID} mysql/."
+			}
+		}
+		
+		stage('Login to Dockerhub') {
 			steps {
 				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 			}
