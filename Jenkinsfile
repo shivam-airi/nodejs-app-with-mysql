@@ -31,9 +31,9 @@ pipeline{
 		
 		stage('Push all images') {
 			steps {
-				sh "docker push frontend:v${env.BUILD_ID}"
-				sh "docker push backend:v${env.BUILD_ID}"
-				sh "docker push mysqldb:v${env.BUILD_ID}"
+				sh "docker push giitcodes/frontend:v${env.BUILD_ID}"
+				sh "docker push giitcodes/backend:v${env.BUILD_ID}"
+				sh "docker push giitcodes/mysqldb:v${env.BUILD_ID}"
 			}
 		}
 	}
