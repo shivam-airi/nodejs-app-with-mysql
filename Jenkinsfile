@@ -1,5 +1,8 @@
 pipeline{
 	agent any
+	environment {
+		DOCKERHUB_CREDENTIALS=credentials("dockerhub-node-app")
+	}
 
 	stages {
 		stage('Build image for frontend') {
@@ -13,6 +16,17 @@ pipeline{
 				sh "docker build -t backend:v${env.BUID_ID} backend/."
 			}
 		}
-
+		
+		stage('Login') {
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
+	}
+	
+	post {
+		always {
+			sh 'docker logout'
+		}
 	}
 }
