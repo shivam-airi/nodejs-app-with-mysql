@@ -13,20 +13,20 @@ pipeline{
 
 		stage('Build image for backend') {
 			steps {
-				sh "docker build -t backend:v${env.BUID_ID} backend/."
+				sh "docker build -t backend:v${env.BUILD_ID} backend/."
 			}
 		}
 		
 		stage('Login') {
 			steps {
-				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+				sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
 			}
 		}
 	}
 	
 	post {
 		always {
-			sh 'docker logout'
+			sh "docker logout"
 		}
 	}
 }
