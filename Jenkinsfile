@@ -19,10 +19,10 @@ pipeline{
 		
 		stage('Build image for mysql') {
 			steps {
-				sh "docker build -t mysqldb:v${env.BUILD_ID} mysql/."
+				sh "docker build -t mysqldb:v${env.BUILD_ID} mysqldb/."
 			}
 		}
-		
+
 		stage('Login to Dockerhub') {
 			steps {
 				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
