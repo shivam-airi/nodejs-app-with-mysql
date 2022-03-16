@@ -7,19 +7,19 @@ pipeline{
 	stages {
 		stage('Build image for frontend') {
 			steps {
-				sh "docker build -t giitcodes/frontend:v${env.BUILD_ID} frontend/."
+				sh "docker build -t rajputvikram/frontend:v${env.BUILD_ID} frontend/."
 			}
 		}
 
 		stage('Build image for backend') {
 			steps {
-				sh "docker build -t giitcodes/backend:v${env.BUILD_ID} backend/."
+				sh "docker build -t rajputvikram/backend:v${env.BUILD_ID} backend/."
 			}
 		}
 		
 		stage('Build image for mysql') {
 			steps {
-				sh "docker build -t giitcodes/mysqldb:v${env.BUILD_ID} mysqldb/."
+				sh "docker build -t rajputvikram/mysqldb:v${env.BUILD_ID} mysqldb/."
 			}
 		}
 
@@ -31,9 +31,9 @@ pipeline{
 		
 		stage('Push all images') {
 			steps {
-				sh "docker push giitcodes/frontend:v${env.BUILD_ID}"
-				sh "docker push giitcodes/backend:v${env.BUILD_ID}"
-				sh "docker push giitcodes/mysqldb:v${env.BUILD_ID}"
+				sh "docker push rajputvikram/frontend:v${env.BUILD_ID}"
+				sh "docker push rajputvikram/backend:v${env.BUILD_ID}"
+				sh "docker push rajputvikram/mysqldb:v${env.BUILD_ID}"
 			}
 		}
 	}
