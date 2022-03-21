@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-app
+    app.kubernetes.io/name: mysql
+  name: mysql-deployment
+  namespace: node-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+      tier: mysql
+  template:
+    metadata:
+      labels:
+        app: my-app
+        tier: mysql
+    spec:
+      containers:
+        - image: rajputvikram/mysql:latest
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 1000Mi
+          name: mysql-db
+          ports:
+            - containerPort: 3306
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: password@12345
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: mysql
+  name: mysqldb
+  namespace: node-app
+spec:
+  selector:
+    app: my-app
+    tier: mysql
+  ports:
+   -  protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: LoadBalancer    
