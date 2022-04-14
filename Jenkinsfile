@@ -6,11 +6,11 @@ pipeline {
 	}
     
     stages {
-        stage('gitclone') {
-            steps {
-                git "https://github.com/Naveenmishra1197/nodejs-app-with-mysql.git"
-            }
-        }
+//         stage('gitclone') {
+//             steps {
+//                 git "https://github.com/Naveenmishra1197/nodejs-app-with-mysql.git"
+//             }
+//         }
         stage('build frontend image') {
             steps {
                sh "docker build -t Naveenmishra1197/frontend:v1 frontend/."
