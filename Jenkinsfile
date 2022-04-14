@@ -38,7 +38,7 @@ pipeline {
             steps {
                 sh 'docker push dockeradda1197/frontend:v1'
                 sh 'docker push dockeradda1197/backend:v1'
-                sh 'docker push dockeradda1197/mysql:v1'
+                sh 'docker push dockeradda1197/mysqldb:v1'
             }
         }
     }
