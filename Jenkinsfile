@@ -9,7 +9,7 @@ pipeline {
         stage('gitclone') {
             steps {
                 git "https://github.com/Naveenmishra1197/nodejs-app-with-mysql.git"
-            }.
+            }
         }
         stage('build frontend image') {
             steps {
