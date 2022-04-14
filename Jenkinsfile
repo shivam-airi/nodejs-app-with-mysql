@@ -13,7 +13,7 @@ pipeline {
 //         }
         stage('build frontend image') {
             steps {
-               sh "docker build -t Naveenmishra1197/frontend:v1 frontend/."
+               sh "docker build -t naveenmishra1197/frontend:v1 frontend/."
 
             }
         }
