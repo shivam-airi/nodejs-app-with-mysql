@@ -41,6 +41,15 @@ pipeline {
                 sh 'docker push dockeradda1197/mysqldb:v1'
             }
         }
+	    
+	 stage('Remove old images') {
+
+			steps {
+				sh 'docker rmi -f dockeradda1197/frontend:v1'
+                                sh 'docker rmi -f dockeradda1197/backend:v1'
+                                sh 'docker rmi -f  dockeradda1197/mysqldb:v1'
+			}
+		}
     }
 }
 
