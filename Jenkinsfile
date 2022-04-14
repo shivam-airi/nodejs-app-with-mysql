@@ -13,19 +13,19 @@ pipeline {
 //         }
         stage('build frontend image') {
             steps {
-               sh "docker build -t naveenmishra1197/frontend:v1 frontend/."
+               sh "docker build -t dockeradda1197/frontend:v1 frontend/."
 
             }
         }
         stage('build backend image') {
             steps {
-                sh "docker build -t naveenmishra1197/backend:v1 backend/."
+                sh "docker build -t dockeradda1197/backend:v1 backend/."
             }
         }
          
         stage('build database image') {
             steps {
-                sh "docker build -t naveenmishra1197/mysqldb:v1 mysqldb/."
+                sh "docker build -t dockeradda1197/mysqldb:v1 mysqldb/."
             }
         }
       
@@ -36,9 +36,9 @@ pipeline {
         }
          stage('push images') {
             steps {
-                sh 'docker push naveenmishra1197/frontend:v1'
-                sh 'docker push naveenmishra1197/backend:v1'
-                sh 'docker push naveenmishra1197/mysql:v1'
+                sh 'docker push dockeradda1197/frontend:v1'
+                sh 'docker push dockeradda1197/backend:v1'
+                sh 'docker push dockeradda1197/mysql:v1'
             }
         }
     }
